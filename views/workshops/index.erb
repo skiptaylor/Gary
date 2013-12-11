@@ -1,0 +1,32 @@
+<div id="banner">
+	Dr. Arthur presents both <span style="font-weight: 800;">NCE</span> and <span style="font-weight: 800;">NCMHCE</span> Workshops
+</div>
+<div class="container">
+	<div class="row mar-top">
+		<div class="col-md-10 col-md-offset-1">
+
+			<h1>Workshops</h1>
+
+			<p></p>
+			<table class="table table-striped table-hover">
+				<tr>
+					<th>Workshop</th>
+					<th>Date</th>
+					<th style="text-align:right;"><a href="/workshops/new" class="btn btn-success btn-xs">New</a></th>
+				</tr>
+				<% @workshops.each do |w| %>
+				<tr>
+					<td><%= w.venue %></td>
+					<td>
+						<%= format_day w.start_date %>
+						<% unless w.start_date == w.end_date %>
+						 - <%= format_day w.end_date %>
+						<% end %>
+					</td>
+					<td style="text-align:right;"><a href="/workshops/<%= w.id %>/edit" class="btn btn-default btn-xs">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/workshops/<%= w.id %>/delete" class="btn btn-default btn-xs delete">Delete</a></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

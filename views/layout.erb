@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+   <meta name="description" content="" />
+   <meta name="author" content="" />
+   <link rel="shortcut icon" href="favicon.ico" />
+	<title>Arthur Workshops</title>
+	<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/js/hide_addressbar.js"></script>
+	<script type="text/javascript" src="/js/application.js"></script>
+	
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap-theme.cs" />
+	<link type="text/css" rel="stylesheet" href="/css/theme.css" />
+</head>
+
+<body>
+	<div class="row">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+		       <ul class="nav navbar-nav">
+		 			<li style="margin: 0px; padding: 0px;" class="<%= active 'home' %>"><a href="/about/home">Home</a></li>
+		 			<li style="margin: 0px; padding: 0px;" class="<%= active 'gary' %>"><a href="/about/gary">About Gary</a></li>
+		 			<li style="margin: 0px; padding: 0px;" class="<%= active 'workshops' %>"><a href="/about/workshops">Workshops</a></li>
+		 			<li style="margin: 0px; padding: 0px;" class="<%= active 'studyguides' %>"><a href="/about/studyguides">Study Guides</a></li>
+					<li style="margin: 0px; padding: 0px;" class="<%= active 'reservations' %>"><a href="/workshops/reservations/new">Reserve a seat</a></li>
+				</ul>
+		      <ul class="nav navbar-nav navbar-right">
+		 			<li style="margin: 0px; padding: 0px;"><a href="mailto:garthur40@comcast.net"><span class="glyphicon glyphicon-envelope"></span> &nbsp;Contact</a></li>
+		       </ul>
+		  </div>
+		</nav>
+	</div>
+			
+			
+	<div class="top-bar">
+		<div class="container">
+			<img src="/img/garysm.jpg" class="img-circle" style="margin: -54px 24px 0 0;">
+		<span class="header">ARTHUR &nbsp;WORKSHOPS</span>
+			<!-- <h2>Gary Arthur, <small>Ed.D., LPC, NCC, CPCE</small></h2> -->
+		</div><!-- /.container -->
+	</div><!-- /.top-bar -->
+	
+	
+	<%= flash %>
+	<%= yield %>
+	
+	<div class="container">
+		<div id="footer">
+			<p>
+				&copy; 2013 Dr. Gary Arthur. All rights reserved.
+			
+				<a href="/workshops" class="under-link sp">Admin</a>
+				<% if session[:admin] %><a href="/sign-out" class="under-link">Sign out</a><% end %>
+			</p>
+		</div>
+	</div>
+
+</body>
+
+</html>

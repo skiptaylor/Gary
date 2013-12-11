@@ -1,0 +1,53 @@
+<div id="banner">
+	Dr. Arthur presents both <span style="font-weight: 800; color: #8eff18;">NCE</span> and <span style="font-weight: 800; color: #8eff18;">NCMHCE</span> Workshops
+</div>
+<div class="container">
+	<div class="row mar-both">
+		<br />
+		<div class="col-md-8 col-md-offset-2">
+			<form method="post" class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="name" class="col-sm-2 control-label"> </label>
+					<div class="col-sm-10">
+						<h1>Reserve a seat</h1>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="name" class="col-sm-2 control-label">Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<%= @reservations.name %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<%= @reservations.email %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-sm-2 control-label"><span style="color: #bf0000;">Workshop</span></label>
+					<div class="col-sm-10">
+						<select class="form-control" name="workshop" id="workshop">
+							<% @workshops.each do |w| %>
+							<option value="<%= w.id %>">
+								<%= w.venue %>&nbsp;&nbsp;&nbsp;&nbsp;
+								<%= format_day w.start_date %>
+								<% unless w.start_date == w.end_date %>
+								- <%= format_day w.end_date %>
+								<% end %>
+							</option>
+							<% end %>
+						</select>
+					</div>
+					</label>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-success btn-md">Reserve</button> &nbsp;&nbsp;<a href="/" class="btn btn-default btn-md">Cancel</a>
+					</div>
+					<br /><br /><br /><br />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

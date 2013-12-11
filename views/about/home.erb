@@ -1,0 +1,84 @@
+<div id="banner">
+	Dr. Arthur Presents Both <span style="font-weight: 800;">NCE</span> and <span style="font-weight: 800;">NCMHCE</span> Workshops
+</div>
+<div class="row">
+	<div class="container">
+		<div class="col-md-12 mar-top">
+			<img src="/img/group.jpg" class="pull-right" />
+
+			<p class="main-head">Here at the Gary Arthur Network you can<br />register for <span style="font-weight: 800; color: #bf0000;">NCE</span> and <span style="font-weight: 800; color: #bf0000;">NCMHCE</span> workshops<br />and purchase the study programs.</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="container">
+		<hr />
+		<div class="col-md-6">
+			<h1 style="margin-top: 0px;">Workshops</h1>
+			<p>Dr. Arthur has conducted 120 2-day workshops since 1986. The National Counselor’s Examination Workshop covers 9-study units over 2-days. The workshop covers two hour periods for each unit representing most of the questions and less time on units for fewer items on the NCE.</p>
+			<p><a href="/about/workshops" class="btn btn-info btn-xs">Learn more...</a></p>
+			<br />
+			<h1 style="margin-top: 0px;">Study Programs</h1>
+			<p>The Dr. Arthur Study Programs have a proven record in how to narrow the study material to the essentials. Repeatedly users have indicated that the manual content is a must for preparation. He has a knack in writing questions that are structured in the same way as the actual test. Unlike other manuals he is the single writer who has taught all the course content.</p>
+			<p><a href="/about/studyguides" class="btn btn-info btn-xs">Learn more...</a></p>
+		</div>
+		<div class="col-md-6"> 
+			<h1 style="font-size: 1.8em; margin-top: 0px;">Upcoming <span style="font-weight: 800; color: #bf0000;">NCE</span> Workshops</h1>
+			<div id="upcoming-workshops">
+				
+				<% Workshop.all(nce: true).each do |w| %>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<a data-toggle="collapse" class="accord" data-parent="#accordion" href="#<%= w.id %>">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<%= format_day w.start_date %>
+									<% unless w.start_date == w.end_date %>
+									- <%= format_day w.end_date %>
+									<% end %>
+								</h4>
+							</div>
+						</a>
+						<div id="<%= w.id %>" class="panel-collapse collapse">
+							<div class="panel-body">
+								<h3 style="font-weight: 800;"><%= w.venue %></h3>
+								<%= Kramdown::Document.new(w.description).to_html %>
+								<a href="/workshops/reservations/new" class="btn btn-default btn-xs">Reserve a seat</a>
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+				<% end %>
+				
+			</div>
+			<hr />
+			<h1 style="font-size: 1.8em;">Upcoming <span style="font-weight: 800; color: #bf0000;">NCMHCE</span> Workshops</h1>
+			<div id="upcoming-workshops">
+				
+				<% Workshop.all(ncmhce: true).each do |w| %>
+				<!-- <div class="panel-group" id="accordion"> -->
+					<div class="panel panel-default">
+						<a data-toggle="collapse" class="accord" data-parent="#accordion" href="#<%= w.id %>">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<%= format_day w.start_date %>
+									<% unless w.start_date == w.end_date %>
+									- <%= format_day w.end_date %>
+									<% end %>
+								</h4>
+							</div>
+						</a>
+						<div id="<%= w.id %>" class="panel-collapse collapse">
+							<div class="panel-body">
+								<h3 style="font-weight: 800;"><%= w.venue %></h3>
+								<%= Kramdown::Document.new(w.description).to_html %>
+								<a href="/workshops/reservations/new" class="btn btn-default btn-xs">Reserve a seat</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% end %>
+				
+			</div>
+	</div>
+</div>
