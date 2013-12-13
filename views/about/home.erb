@@ -25,7 +25,6 @@
 		<div class="col-md-6"> 
 			<h1 style="font-size: 1.8em; margin-top: 0px;">Upcoming <span style="font-weight: 800; color: #bf0000;">NCE</span> Workshops</h1>
 			<div id="upcoming-workshops">
-				
 				<% Workshop.all(nce: true).each do |w| %>
 				<div class="panel-group" id="accordion">
 					<div class="panel panel-default">
@@ -47,16 +46,14 @@
 							</div>
 						</div>
 					</div>
-				<!-- </div> -->
 				<% end %>
 				
-			</div>
-			<hr />
+				<hr />
 			<h1 style="font-size: 1.8em;">Upcoming <span style="font-weight: 800; color: #bf0000;">NCMHCE</span> Workshops</h1>
-			<div id="upcoming-workshops">
+			<!-- <div id="upcoming-workshops"> -->
 				
 				<% Workshop.all(ncmhce: true).each do |w| %>
-				<!-- <div class="panel-group" id="accordion"> -->
+				<div class="panel-group" id="accordion">
 					<div class="panel panel-default">
 						<a data-toggle="collapse" class="accord" data-parent="#accordion" href="#<%= w.id %>">
 							<div class="panel-heading">
@@ -78,7 +75,7 @@
 					</div>
 				</div>
 				<% end %>
-				
 			</div>
+		</div>
 	</div>
 </div>
