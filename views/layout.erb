@@ -30,7 +30,7 @@
 					<li style="margin: 0px; padding: 0px;" class="<%= active 'reservations' %>"><a href="/workshops/reservations/new">Reserve a seat</a></li>
 				</ul>
 		      <ul class="nav navbar-nav navbar-right">
-		 			<li style="margin: 0px; padding: 0px;"><a href="mailto:garthur40@comcast.net"><span class="glyphicon glyphicon-envelope"></span> &nbsp;Contact</a></li>
+		 			<li style="margin: 0px; padding: 0px;"><a href="mailto:garthur40@comcast.net"><span class="glyphicon glyphicon-send"></span> &nbsp;Contact</a></li>
 		       </ul>
 		  </div>
 		</nav>
@@ -46,7 +46,7 @@
 	</div><!-- /.top-bar -->
 	
 	
-	<%= flash %>
+	<center><span style="color: #ed5929;"><strong><%= flash %></strong></center>
 	<%= yield %>
 	
 	<div class="container">
@@ -54,8 +54,8 @@
 			<p>
 				&copy; 2013 Dr. Gary Arthur. All rights reserved.
 			
-				<a href="/workshops" class="under-link sp">Admin</a>
-				<% if session[:admin] %><a href="/sign-out" class="under-link">Sign out</a><% end %>
+				<a href="/workshops" class="under-link sp"><span class="glyphicon glyphicon-log-in"></span> &nbsp;Sign in</a>
+				<% if session[:admin] %><a href="/sign-out" class="under-link"><span class="glyphicon glyphicon-log-out"></span> &nbsp;Sign out</a><% end %>
 			</p>
 		</div>
 	</div>

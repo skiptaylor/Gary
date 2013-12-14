@@ -12,22 +12,14 @@
 					</div>
 				</div>
 				<div class="form-group">
-
-				<div class="checkbox">
-				  <label  for="nce">
-				    <input type="checkbox" name="nce" id="nce" <%= 'checked="checked"' if @workshop.nce %> />
-				    NCE
-				  </label>
-
-				  
+					<label for="program" class="col-sm-2 control-label"> </label>
+					<div class="col-sm-10">
+						<input type="radio" name="program" id="nce" value="nce" <%= 'checked="checked"' if @workshop.program == 'nce' %> />&nbsp; <strong>NCE</strong> &nbsp;&nbsp;&nbsp;
+						<input type="radio" name="program" id="ncmhce" value="ncmhce" <%= 'checked="checked"' if @workshop.program == 'ncmhce' %> />&nbsp; <strong>NCMHCE</strong>
+					</div>
 				</div>
-				<div class="checkbox">
-				  <label  for="ncmhce">
-				    <input type="checkbox" name="ncmhce" id="ncmhce" <%= 'checked="checked"' if @workshop.ncmhce %> />
-				    NCMHCE
-				  </label>
-
-				</div>
+				
+				
 				<div class="form-group">
 					<label for="venue" class="col-sm-2 control-label">Venue</label>
 					<div class="col-sm-10">
@@ -55,6 +47,7 @@
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button type="submit" class="btn btn-success btn-md">Save</button>&nbsp;&nbsp;<a href="/workshops" class="btn btn-default btn-md">Cancel</a>
+						<small class="pull-right">Two asterisks before and after &mdash; **Bold**  =  <strong>Bold</strong><br />One asterisk before and after &mdash; *Italic* = <em>Italic</em></small>
 					</div>
 				</div>
 			</form>

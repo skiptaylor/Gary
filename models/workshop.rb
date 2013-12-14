@@ -10,8 +10,7 @@ class Workshop
   property :venue,        String, :required => true
   property :description,  Text,   :required => true
 
-  property :nce,          Boolean, :default => false
-  property :ncmhce,       Boolean, :default => false
+  property :program,      String, default: ""
 
   has n, :reservations
   

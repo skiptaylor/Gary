@@ -16,10 +16,9 @@ post '/workshops/new/?' do
     :start_date  => Chronic.parse("#{params[:start_date_year]}-#{params[:start_date_month]}-#{params[:start_date_day]}"),
     :end_date    => Chronic.parse("#{params[:end_date_year]}-#{params[:end_date_month]}-#{params[:end_date_day]}"),
     :venue       => params[:venue],
-    :description => params[:description]
+    :description => params[:description],
+    :program     => params[:program]
   )
-  params[:nce] 					? workshop.update(:nce => true)    : workshop.update(:nce => false)
-  params[:ncmhce] 			? workshop.update(:ncmhce => true) : workshop.update(:ncmhce => false)
   
   session[:flash] = 'Your workshop has been created.'
   redirect '/workshops'
@@ -38,10 +37,9 @@ post '/workshops/:id/edit/?' do
     :start_date  => Chronic.parse("#{params[:start_date_year]}-#{params[:start_date_month]}-#{params[:start_date_day]}"),
     :end_date    => Chronic.parse("#{params[:end_date_year]}-#{params[:end_date_month]}-#{params[:end_date_day]}"),
     :venue       => params[:venue],
-    :description => params[:description]
+    :description => params[:description],
+    :program     => params[:program]
   )
-  params[:nce] 					? workshop.update(:nce => true)    : workshop.update(:nce => false)
-  params[:ncmhce] 			? workshop.update(:ncmhce => true) : workshop.update(:ncmhce => false)
   
   session[:flash] = 'Your workshop has been updated.'
   redirect '/workshops'
