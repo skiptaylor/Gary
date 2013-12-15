@@ -136,11 +136,11 @@ a.under-link:hover	{
 }
 
 .mar-top	{
-	margin: 2em 0 0 0;
+	margin-top: 2em;
 }
 
 .mar-bottom	{
-	margin: 0 0 3em 0;
+	margin-bottom: 3em;
 }
 
 .mar-both	{

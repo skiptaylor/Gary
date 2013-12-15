@@ -1,16 +1,16 @@
-get '/workshops/reservations' do
+get '/admin/reservations' do
   authenticate
   @reservations = Reservation.all
-  erb :'workshops/reservations'
+  erb :'admin/reservations'
 end
 
-get '/workshops/reservations/new' do
+get '/admin/reservations/new' do
   @reservations = Reservation.new
   @workshops = Workshop.upcoming
-  erb :'workshops/reservations'
+  erb :'admin/reservations'
 end
 
-post '/workshops/reservations/new' do
+post '/admin/reservations/new' do
   Reservation.create(
     :name        => params[:name],
     :email       => params[:email],
@@ -23,10 +23,10 @@ get '/reserved/?' do
   erb :'reserved'
 end
 
-get '/workshops/reservations/:id/delete' do
+get '/admin/reservations/:id/delete' do
   authenticate
   reservation = Reservation.get(params[:id])
   reservation.destroy
   session[:flash] = 'The reservation has been removed.'
-  redirect '/workshops'
+  redirect '/index'
 end

@@ -1,16 +1,16 @@
-get '/workshops/?' do
+get '/admin/?' do
   authenticate
   @workshops = Workshop.all
-  erb :'workshops/index'
+  erb :'admin/index'
 end
 
-get '/workshops/new/?' do
+get '/admin/new/?' do
   authenticate
   @workshop = Workshop.new
-  erb :'workshops/workshop'
+  erb :'admin/workshop'
 end
 
-post '/workshops/new/?' do
+post '/admin/new/?' do
   authenticate
   workshop = Workshop.create(
     :start_date  => Chronic.parse("#{params[:start_date_year]}-#{params[:start_date_month]}-#{params[:start_date_day]}"),
@@ -21,16 +21,16 @@ post '/workshops/new/?' do
   )
   
   session[:flash] = 'Your workshop has been created.'
-  redirect '/workshops'
+  redirect '/admin'
 end
 
-get '/workshops/:id/edit/?' do
+get '/admin/:id/edit/?' do
   authenticate
   @workshop = Workshop.get(params[:id])
-  erb :'workshops/workshop'
+  erb :'admin/workshop'
 end
 
-post '/workshops/:id/edit/?' do
+post '/admin/:id/edit/?' do
   authenticate
   workshop = Workshop.get(params[:id])
   workshop.update(
@@ -42,13 +42,13 @@ post '/workshops/:id/edit/?' do
   )
   
   session[:flash] = 'Your workshop has been updated.'
-  redirect '/workshops'
+  redirect '/admin'
 end
 
-get '/workshops/:id/delete' do
+get '/admin/:id/delete' do
   authenticate
   workshop = Workshop.get(params[:id])
   workshop.destroy
   session[:flash] = 'Your workshop has been removed.'
-  redirect '/workshops'
+  redirect '/admin'
 end

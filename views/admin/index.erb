@@ -12,7 +12,7 @@
 				<tr>
 					<th>Workshop</th>
 					<th>Date</th>
-					<th style="text-align:right;"><a href="/workshops/new" class="btn btn-success btn-xs">New</a></th>
+					<th style="text-align:right;"><a href="/admin/new" class="btn btn-success btn-xs">New</a></th>
 				</tr>
 				<% @workshops.each do |w| %>
 				<tr>
@@ -23,7 +23,7 @@
 						 - <%= format_day w.end_date %>
 						<% end %>
 					</td>
-					<td style="text-align:right;"><a href="/workshops/<%= w.id %>/edit" class="btn btn-default btn-xs">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/workshops/<%= w.id %>/delete" class="btn btn-default btn-xs delete">Delete</a></td>
+					<td style="text-align:right;"><a href="/admin/<%= w.id %>/edit" class="btn btn-default btn-xs">Edit</a>&nbsp;&nbsp;&nbsp;<a href="/admin/<%= w.id %>/delete" class="btn btn-default btn-xs delete">Delete</a></td>
 				</tr>
 				<% end %>
 			</table>

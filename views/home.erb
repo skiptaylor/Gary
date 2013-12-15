@@ -1,17 +1,18 @@
 <div id="banner">
 	Dr. Arthur Presents Both <span style="font-weight: 800;">NCE</span> and <span style="font-weight: 800;">NCMHCE</span> Workshops
 </div>
-<div class="row">
-	<div class="container">
+<div class="container">
+	<div class="row">
 		<div class="col-md-12 mar-top">
 			<img src="/img/group.jpg" class="pull-right" />
-
 			<p class="main-head">Here at the Gary Arthur Network you can<br />register for <span style="font-weight: 800; color: #bf0000;">NCE</span> and <span style="font-weight: 800; color: #bf0000;">NCMHCE</span> workshops<br />and purchase the study programs.</p>
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="container">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
 		<hr />
 		<div class="col-md-6">
 			<h1 style="margin-top: 0px;">Workshops</h1>
@@ -44,7 +45,7 @@
 							<div class="panel-body">
 								<h3 style="font-weight: 800;"><%= w.venue %></h3>
 								<%= Kramdown::Document.new(w.description).to_html %>
-								<a href="/workshops/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
+								<a href="/admin/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
 							</div>
 						</div>
 					</div>
@@ -69,14 +70,13 @@
 							<div class="panel-body">
 								<h3 style="font-weight: 800;"><%= w.venue %></h3>
 								<%= Kramdown::Document.new(w.description).to_html %>
-								<a href="/workshops/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
+								<a href="/admin/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<% end %>
-				<div style="margin-bottom: 2em;"> &nbsp; </div>
 			</div>
-		</div>
+		</div></div></div>
 	</div>
 </div>

@@ -9,7 +9,7 @@ post '/sign-in/?' do
   params[:password].downcase!
   if (params[:username] == 'gary') && (params[:password] == 'littlefella')
     session[:admin] = true
-    redirect '/workshops'
+    redirect '/admin'
   else
     session[:flash] = 'Sign in failed. Try again.'
     redirect '/sign-in'
