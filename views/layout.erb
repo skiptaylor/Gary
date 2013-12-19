@@ -45,6 +45,9 @@
 		</div><!-- /.container -->
 	</div><!-- /.top-bar -->
 	
+	<div id="banner">
+		Dr. Arthur Presents Both <span style="font-weight: 800;">NCE</span> and <span style="font-weight: 800;">NCMHCE</span> Workshops
+	</div>
 	
 	<center><span style="color: #ed5929;"><strong><%= flash %></strong></center>
 	<%= yield %>
@@ -54,7 +57,7 @@
 			<p>
 				&copy; 2013 Dr. Gary Arthur. All rights reserved.
 			
-				<a href="/sign-in" class="under-link sp"><span class="glyphicon glyphicon-log-in"></span> &nbsp;Sign in</a>
+				<a href="/admin" class="under-link sp"><span class="glyphicon glyphicon-log-in"></span> &nbsp;Sign in</a>
 				<% if session[:admin] %><a href="/sign-out" class="under-link"><span class="glyphicon glyphicon-log-out"></span> &nbsp;Sign out</a><% end %>
 			</p>
 		</div>

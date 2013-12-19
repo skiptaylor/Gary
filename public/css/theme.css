@@ -108,7 +108,7 @@ a.accord:hover	{
 }
 
 a.under-link	{
-	color: #565d67;
+	color: #094e84;
 	font-weight: 400;
 	text-decoration: none;
 	padding: 3px;
@@ -120,16 +120,17 @@ a.under-link	{
             transition: all 0.2s ease-in-out;
 }
 
+a.under-link:hover	{
+	text-decoration: none;
+	color: #a72600;
+	border-bottom: 1px solid #000000;
+}
+
 .panel	{
 	margin: 0;
 	border: none;
 }
 
-a.under-link:hover	{
-	text-decoration: none;
-	color: #bf0000;
-	border-bottom: 1px solid #bf0000;
-}
 
 .sp	{
 	margin: 0 4em;
