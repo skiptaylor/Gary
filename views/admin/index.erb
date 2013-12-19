@@ -11,7 +11,7 @@
 					<th>Date</th>
 					<th style="text-align:right;"><a href="/admin/new" class="btn btn-success btn-xs">New</a></th>
 				</tr>
-				<% @workshops.each do |w| %>
+				<% @workshops.sort{|a,b| b.start_date <=> a.start_date}.each do |w| %>
 				<tr>
 					<td><%= w.venue %></td>
 					<td>
