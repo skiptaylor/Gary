@@ -15,15 +15,15 @@
 		
 		<div class="col-md-12">
 			<hr />
+			<% @workshop = Workshop.all %>
 			<h1>NCE Experience</h1>
 		</div>
 		<div class="col-md-6">
 			<p>During 1984, Laverne Worth, a civil service counselor at the Fort Benning Education Center for the U.S. Army asked me if I would conduct a workshop to help their counselors prepare for the National Counselor’s Examination. My position at the time was an Assistant Professor teaching in a master level counseling program for Georgia State University at Fort Benning, Georgia.</p>
 			<p>I gathered and organized class lecture notes and conducted the first workshop for 18 master level graduate students and several counselors from the Education Center at Fort Benning military base. Each year a different group of students continued the training request. Within the next year I wrote the first bound volume of preparatory material for the NCE.</p>
 			<p>Shortly after the first training session I decided to take the NCE during the period of norm gathering. I did not need a particular since there was not a license in Georgia to become a Licensed Professional Counselor. I became a National Certified Counselor (NCC). I had acquired knowledge after several years of graduate course work and had taught several of the graduate level courses for this examination.</p>
-			<p>Since 1984 I have conducted 118 2-day workshops covering 9 units. Participants in my workshops have come from a variety of states within the United States. They have represented states as far west as Washington to New Jersey on the east, as far north as Minnesota and south to Florida. For several years I did my own publishing of the different manuals. In 1995, I decided to contract with a publisher to free up to time to read and write. Recently I have entered a contract with a new company, Career Training Concepts, to publish my works.</p>
+			<p>Since 1984 I have conducted <%= @workshop.total %> 2-day workshops covering 9 units. Participants in my workshops have come from a variety of states within the United States. They have represented states as far west as Washington to New Jersey on the east, as far north as Minnesota and south to Florida. For several years I did my own publishing of the different manuals. In 1995, I decided to contract with a publisher to free up to time to read and write. Recently I have entered a contract with a new company, Career Training Concepts, to publish my works.</p>
 		</div>
-		<% @workshop = Workshop.all %>
 		<div class="col-md-6">
 			<p>Career Training Concepts publishes interest tests, conducts training, and consults with schools and the National Guard in their community commitments to education. I have completely rewritten the present manual four times and make it a practice to edit after each NCE administration when new material surfaces.</p>
 			<p>Approximately ten years ago NBCC surveyed field counselors to determine the amount of time and work performed in each of the 8 content areas of the NCE. There was a major change in the next administration. Changes amounted to an alteration in the number of questions per unit compared to the previous 25 questions for each of the 8 areas. Introduced was the Counselor Work Behaviors and scenarios became a part of the question format. Finally questions from family theory were added to helping relationship. Since that time a second survey has been conducted but with fewer changes.</p>

@@ -12,14 +12,14 @@ class Workshop
 
   property :program,      String, default: ""
 
-  has n, :reservations
+  has n, :reservations, :constraint => :destroy
   
   def self.upcoming
     all(:end_date.gte => Chronic.parse('now'))
   end
   
   def self.total
-    all(:end_date.lt => Chronic.parse('now')).count + 120
+    all(:end_date.lt => Chronic.parse('now')).count + 126
   end
   
 end
