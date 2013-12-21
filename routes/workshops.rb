@@ -52,3 +52,16 @@ get '/admin/:id/delete' do
   session[:flash] = 'Your workshop has been removed.'
   redirect '/admin'
 end
+
+get '/admin/expired?' do
+  authenticate
+  @workshops = Workshop.all
+  erb :'admin/expired'
+end
+
+get '/admin/:id/view?' do
+  authenticate
+  @workshop = Workshop.get(params[:id])
+  @reservation = Reservation.get(params[:id])
+  erb :'admin/view'
+end

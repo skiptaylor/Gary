@@ -20,7 +20,7 @@ jQuery(function()
 
   $(window).load(function() {
     $('a.delete').click(function() {
-      if (!confirm('This cannot be undone! Continue?')) {
+      if (!confirm('Delete this workshop only if it has been cancelled. Deleting this workshop will remove it from the total number of workshops given. Select OK to delete.')) {
         return false;
       }
     });

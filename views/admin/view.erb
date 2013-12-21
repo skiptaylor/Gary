@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row mar-top">
+		<div class="col-md-6 col-md-offset-3">
+
+			<%= format_day @workshop.start_date %>
+			<% unless @workshop.start_date == @workshop.end_date %>
+			- <%= format_day @workshop.end_date %>
+			<% end %>
+
+
+		<h3 style="font-weight: 800;"><%= @workshop.venue %></h3>
+		<%= Kramdown::Document.new(@workshop.description).to_html %>
+			</table>
+			<br />
+			<a href="/admin/expired" class="btn btn-success btn-xs">Expired Workshops</a>
+			
+			<hr />
+			<p><strong>Reservations</strong></p>
+			<p>
+				<% @workshop.reservations.each do |r| %>
+					<%= r.name %> &nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:<%= r.email %>"><%= r.email %></a><br />
+				<% end %>
+			</p>
+			
+		</div>
+	</div>
+</div>
