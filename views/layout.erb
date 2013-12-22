@@ -55,7 +55,7 @@
 	<div class="container">
 		<div id="footer">
 			<p>
-				&copy; 2013 Dr. Gary Arthur. All rights reserved.
+				&copy; <%= Time.now.strftime("%Y") %> Dr. Gary Arthur. All rights reserved.
 			
 				<a href="/admin" class="under-link sp"><span class="glyphicon glyphicon-log-in"></span> &nbsp;Sign in</a>
 				<% if session[:admin] %><a href="/sign-out" class="under-link"><span class="glyphicon glyphicon-log-out"></span> &nbsp;Sign out</a><% end %>
