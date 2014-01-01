@@ -102,6 +102,11 @@ a.accord:hover	{
 	color: #ffffff;
 }
 
+.panel	{
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+}
+
 .panel-body	{
 	padding: 0 0 1em 1em;
 	line-height: 1.6em;
