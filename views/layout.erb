@@ -49,13 +49,13 @@
 		Dr. Arthur Presents Both <span style="font-weight: 800;">NCE</span> and <span style="font-weight: 800;">NCMHCE</span> Workshops
 	</div>
 	
-	<center><span style="color: #ed5929;"><strong><%= flash %></strong></center>
+	<center><span style="color: red;"><strong><%= flash %></strong></span></center>
 	<%= yield %>
 	
 	<div class="container">
 		<div id="footer">
 			<p>
-				&copy; <%= Time.now.strftime("%Y") %> Dr. Gary Arthur. All rights reserved.
+				<small>&copy; <%= Time.now.strftime("%Y") %> Dr. Gary Arthur. All rights reserved.</small>
 			
 				<a href="/admin" class="under-link sp"><span class="glyphicon glyphicon-log-in"></span> &nbsp;Sign in</a>
 				<% if session[:admin] %><a href="/sign-out" class="under-link"><span class="glyphicon glyphicon-log-out"></span> &nbsp;Sign out</a><% end %>

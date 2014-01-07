@@ -1,30 +1,17 @@
 <div class="container">
 	<div class="row mar-both">
-		<br />
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-10 col-md-offset-1">
 			<form method="post" class="form-horizontal" role="form">
-				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label"> </label>
-					<div class="col-sm-10">
+				
 						<h1>Reserve a seat</h1>
-					</div>
-				</div>
+				
+				<p style="font-size: .9em; line-height: 1.5em;"><strong>Conditions:</strong> The Arthur Study Guide will be provided plus a smaller manual at the time of the workshop. Once full payment is received the participant may sit at any future workshop at no additional charge. In order to return for another workshop the participant must maintain contact with the presenter for dates and times.  Fully paid participants are able to return for the workshops free of charge up to 18 months from the time of first attendance. A minimum of 10 participants is required for the workshop to be offered.  Registration is desired in advance of the workshop. If you want your material prior to the workshop date please remit the amount of registration and $5 for the cost of mailing. Late registration is possible but materials may not be available until the following Monday.</p>
+				<p style="font-size: .9em; line-height: 1.5em;">Room assignments are made just prior to the workshop so check back for details.<br />Reservations do not guarantee a seat until payment is made.</p>
+				<br />
+				
 				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label">Name</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<%= @reservations.name %>" />
-						<p class="help-block"><samll>You must enter your first and last name here.</samll></p>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="email" class="col-sm-2 control-label">Email</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<%= @reservations.email %>" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="email" class="col-sm-2 control-label"><span style="color: #bf0000;">Workshop</span></label>
-					<div class="col-sm-10">
+					<label for="email" class="col-sm-3 control-label"><span style="color: #bf0000;">Select Workshop</span></label>
+					<div class="col-sm-8">
 						<select class="form-control" name="workshop" id="workshop">
 							<% @workshops.each do |w| %>
 							<option value="<%= w.id %>">
@@ -40,11 +27,69 @@
 					</label>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
+					<label for="name" class="col-sm-3 control-label">Name</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<%= @reservation.name %>" />
+						<p class="help-block"><small>You must enter your first and last name here.</small></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-sm-3 control-label">Email</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<%= @reservation.email %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="argosy" class="col-sm-3 control-label"> </label>
+					<div class="col-sm-8">
+		 		    	<input type="checkbox" name="argosy" id="argosy" <%= 'checked="checked"' if @reservation.argosy  %> />
+		 		    	<strong> &nbsp;&nbsp;Active Argosy Student</strong>
+		 		  </div>
+				</div>
+				<div class="form-group">
+					<label for="address1" class="col-sm-3 control-label">Address</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="address1" name="address1" value="<%= @reservation.address1 %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="address2" class="col-sm-3 control-label"> </label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="address2" name="address2" value="<%= @reservation.address2 %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="city" class="col-sm-3 control-label">City, State, Zip</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="city" name="city" placeholder="City" value="<%= @reservation.city %>" />
+					</div>
+
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="state" name="state" placeholder="State" value="<%= @reservation.state %>" />
+					</div>
+
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="zip" name="zip" placeholder="Zip" value="<%= @reservation.zip %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="phone" class="col-sm-3 control-label">Phone</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="<%= @reservation.phone %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="mobile" class="col-sm-3 control-label">Mobile</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Phone" value="<%= @reservation.mobile %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-3 col-sm-8">
 						<button type="submit" class="btn btn-success btn-md">Reserve</button> &nbsp;&nbsp;<a href="/" class="btn btn-default btn-md">Cancel</a>
 					</div>
-					<br /><br /><br /><br />
-				</div>
+				</div><br />
+				<p><strong>Payment:</strong> You may pay with PayPal after reserving a seat. Or mail a check or money order made out to Gary L. Arthur to 175 Wellborn Chase, Fayetteville, GA 30215. Or contact <a href="mailto:garthur40@comcast.net" class="under-link">Dr. Arthur</a>. 
 			</form>
 		</div>
 	</div>

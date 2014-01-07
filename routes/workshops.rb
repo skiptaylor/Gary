@@ -17,7 +17,16 @@ post '/admin/new/?' do
     :end_date    => Chronic.parse("#{params[:end_date_year]}-#{params[:end_date_month]}-#{params[:end_date_day]}"),
     :venue       => params[:venue],
     :description => params[:description],
-    :program     => params[:program]
+    :program     => params[:program],
+    :location    => params[:location],
+    :address1    => params[:address1],
+    :address2    => params[:address2],
+    :city        => params[:city],
+    :state       => params[:state],
+    :zip         => params[:zip],
+    :time        => params[:time],
+    :price1      => params[:price1],
+    :price2      => params[:price2]
   )
   
   session[:flash] = 'Your workshop has been created.'
@@ -38,7 +47,16 @@ post '/admin/:id/edit/?' do
     :end_date    => Chronic.parse("#{params[:end_date_year]}-#{params[:end_date_month]}-#{params[:end_date_day]}"),
     :venue       => params[:venue],
     :description => params[:description],
-    :program     => params[:program]
+    :program     => params[:program],
+    :location    => params[:location],
+    :address1    => params[:address1],
+    :address2    => params[:address2],
+    :city        => params[:city],
+    :state       => params[:state],
+    :zip         => params[:zip],
+    :time        => params[:time],
+    :price1      => params[:price1],
+    :price2      => params[:price2]
   )
   
   session[:flash] = 'Your workshop has been updated.'

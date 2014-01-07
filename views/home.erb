@@ -42,7 +42,13 @@
 						<div id="<%= w.id %>" class="panel-collapse collapse">
 							<div class="panel-body">
 								<h3 style="font-weight: 800;"><%= w.venue %></h3>
-								<%= Kramdown::Document.new(w.description).to_html %>
+								<p><%= Kramdown::Document.new(w.description).to_html %></p>
+								<%= Kramdown::Document.new(w.price1).to_html %>
+								<%= Kramdown::Document.new(w.price2).to_html %>
+								<p><%= w.time %></p>
+								<p><strong><%= w.location %></strong><br />
+									<small><%= w.address1 %>, <%= w.city %>, <%= w.state %> <%= w.zip %></small></p>
+								</p>
 								<a href="/admin/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
 							</div>
 						</div>
@@ -67,7 +73,13 @@
 						<div id="<%= w.id %>" class="panel-collapse collapse">
 							<div class="panel-body">
 								<h3 style="font-weight: 800;"><%= w.venue %></h3>
-								<%= Kramdown::Document.new(w.description).to_html %>
+								<p><%= Kramdown::Document.new(w.description).to_html %></p>
+								<%= Kramdown::Document.new(w.price1).to_html %>
+								<%= Kramdown::Document.new(w.price2).to_html %>
+								<p><%= w.time %></p>
+								<p><strong><%= w.location %></strong><br />
+									<small><%= w.address1 %>, <%= w.city %>, <%= w.state %> <%= w.zip %></small></p>
+								</p>
 								<a href="/admin/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
 							</div>
 						</div>

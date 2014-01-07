@@ -179,3 +179,7 @@ a	{
 .control-label	{
 	text-align: right;
 }
+
+.semibold	{
+	font-weight: 600;
+}

@@ -3,56 +3,116 @@
 		<div class="col-md-10 col-md-offset-1">
 			<form method="post" class="form-horizontal" role="form">
 				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label"> </label>
-					<div class="col-sm-10">
+					<label for="name" class="col-sm-3 control-label"> </label>
+					<div class="col-sm-9">
 						<h1>Workshop</h1>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="program" class="col-sm-2 control-label"> </label>
-					<div class="col-sm-10">
+					<label for="program" class="col-sm-3 control-label"> </label>
+					<div class="col-sm-9">
 						<input type="radio" name="program" id="nce" value="nce" <%= 'checked="checked"' if @workshop.program == 'nce' %> />&nbsp; <strong>NCE</strong> &nbsp;&nbsp;&nbsp;
 						<input type="radio" name="program" id="ncmhce" value="ncmhce" <%= 'checked="checked"' if @workshop.program == 'ncmhce' %> />&nbsp; <strong>NCMHCE</strong>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="venue" class="col-sm-2 control-label">Venue</label>
-					<div class="col-sm-10">
+					<label for="venue" class="col-sm-3 control-label">Venue</label>
+					<div class="col-sm-9">
 						<input type="text" class="form-control" id="venue" name="venue" value="<%= @workshop.venue %>" />
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Start date</label>
-					<div class="col-sm-10">
+					<label class="col-sm-3 control-label">Start date</label>
+					<div class="col-sm-5">
 						 <%= date_to_field('start_date', @workshop.start_date) %>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">End date</label>
-					<div class="col-sm-10">
+					<label class="col-sm-3 control-label">End date</label>
+					<div class="col-sm-5">
 						 <%= date_to_field('end_date', @workshop.end_date) %>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="description" class="col-sm-2 control-label">Description</label>
-					<div class="col-sm-10">
+					<label for="location" class="col-sm-3 control-label">Location</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="location" name="location" value="<%= @workshop.location %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="address1" class="col-sm-3 control-label">Address</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="address1" name="address1" value="<%= @workshop.address1 %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="city" class="col-sm-3 control-label">City</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="city" name="city" value="<%= @workshop.city %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="state" class="col-sm-3 control-label">State</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="state" name="state" value="<%= @workshop.state %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="zip" class="col-sm-3 control-label">Zip</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="zip" name="zip" value="<%= @workshop.zip %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="time" class="col-sm-3 control-label">Time</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="time" name="time" value="<%= @workshop.time %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="price1" class="col-sm-3 control-label">Full Price</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="price1" name="price1" value="<%= @workshop.price1 %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="price2" class="col-sm-3 control-label">Optional Price</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="price2" name="price2" value="<%= @workshop.price2 %>" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="description" class="col-sm-3 control-label">Description</label>
+					<div class="col-sm-9">
 						<textarea type="text" class="form-control" rows="16" id="description" name="description"><%= @workshop.description %></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
+					<div class="col-sm-offset-3 col-sm-9">
 						<button type="submit" class="btn btn-success btn-md">Save</button>&nbsp;&nbsp;<a href="/admin" class="btn btn-default btn-md">Cancel</a>
 						<small class="pull-right">Two asterisks before and after &mdash; **Bold**  =  <strong>Bold</strong><br />One asterisk before and after &mdash; *Italic* = <em>Italic</em></small>
 					</div>
 				</div>
 			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
 			<hr />
-			<p><strong>Reservations</strong></p>
-			<p>
+			<h1>Reservations</h1>
 				<% @workshop.reservations.each do |r| %>
-					<%= r.name %> &nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:<%= r.email %>"><%= r.email %></a><br />
+				<div class="col-md-6" style="margin: 9px 0;">
+					<strong><%= r.name %></strong><br />
+					<a href="mailto:<%= r.email %>" class="under-link"><%= r.email %></a><br />
+					<p style="font-size: .8em; line-height: 1.4em; margin-top: 6px;">
+						<%= r.address1 %><% if r.address2.length > 0 %>, <%= r.address2 %><% end %><br />
+						<%= r.city %>, <%= r.state %>&nbsp;&nbsp;<%= r.zip %><br />
+						<% if r.phone.length > 0 %><span class="semibold">Phone:</span>&nbsp;&nbsp;<%= r.phone %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% end %><% if r.mobile.length > 0 %><span class="semibold">Mobile:</span> &nbsp;&nbsp;<%= r.mobile %><% end %><br />
+						<% if r.argosy %>Active Argosy Student<% end %>&nbsp;
+					</p>
+				</div>
 				<% end %>
-			</p>
 		</div>
 	</div>
 </div>
+

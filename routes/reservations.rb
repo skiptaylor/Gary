@@ -1,21 +1,30 @@
 get '/admin/reservations' do
   authenticate
-  @reservations = Reservation.all
+  @reservation = Reservation.all
   erb :'admin/reservations'
 end
 
 get '/admin/reservations/new' do
-  @reservations = Reservation.new
+  @reservation = Reservation.new
   @workshops = Workshop.upcoming
   erb :'admin/reservations'
 end
 
 post '/admin/reservations/new' do
-  Reservation.create(
+  reservation = Reservation.create(
     :name        => params[:name],
     :email       => params[:email],
+    :address1    => params[:address1],
+    :address2    => params[:address2],
+    :city        => params[:city],
+    :state       => params[:state],
+    :zip         => params[:zip],
+    :phone       => params[:phone],
+    :mobile      => params[:mobile],
     :workshop_id => params[:workshop]
   )
+  params[:argosy] ? reservation.update(:argosy => true) : reservation.update(:argosy => false)
+  
   redirect '/reserved'
 end
 
