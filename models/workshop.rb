@@ -8,8 +8,8 @@ class Workshop
   property :start_date,   Date,    :required => true, :default => Chronic.parse('now')
   property :end_date,     Date,    :required => true, :default => Chronic.parse('tomorrow')
   property :venue,        String,  :required => true
-  property :description,  Text,    :default => 'If you are a non-Argosy University student please show a photo identification at the main desk.' 
-  property :program,      String,  :default => ""
+  property :description,  Text 
+  property :program,      String
   property :location,     String,  :default => 'Argosy University'
   property :address1,     String,  :default => '980 Hammond Drive'
   property :address2,     String
