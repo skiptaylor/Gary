@@ -45,7 +45,7 @@
 								<p><%= Kramdown::Document.new(w.description).to_html %></p>
 								<%= Kramdown::Document.new(w.price1).to_html %>
 								<%= Kramdown::Document.new(w.price2).to_html %>
-								<p><%= w.time %></p>
+								<p><%= Kramdown::Document.new(w.time).to_html %></p>
 								<p><strong><%= w.location %></strong><br />
 									<small><%= w.address1 %>, <%= w.city %>, <%= w.state %> <%= w.zip %></small></p>
 								</p>
@@ -76,7 +76,7 @@
 								<p><%= Kramdown::Document.new(w.description).to_html %></p>
 								<%= Kramdown::Document.new(w.price1).to_html %>
 								<%= Kramdown::Document.new(w.price2).to_html %>
-								<p><%= w.time %></p>
+								<p><%= Kramdown::Document.new(w.time).to_html %></p>
 								<p><strong><%= w.location %></strong><br />
 									<small><%= w.address1 %>, <%= w.city %>, <%= w.state %> <%= w.zip %></small></p>
 								</p>
