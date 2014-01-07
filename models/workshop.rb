@@ -8,9 +8,7 @@ class Workshop
   property :start_date,   Date,    :required => true, :default => Chronic.parse('now')
   property :end_date,     Date,    :required => true, :default => Chronic.parse('tomorrow')
   property :venue,        String,  :required => true
-  property :description,  Text,    :default => ' 
-
-If you are a non-Argosy University student please show a photo identification at the main desk.' 
+  property :description,  Text,    :default => 'If you are a non-Argosy University student please show a photo identification at the main desk.' 
   property :program,      String,  :default => ""
   property :location,     String,  :default => 'Argosy University'
   property :address1,     String,  :default => '980 Hammond Drive'
@@ -19,7 +17,7 @@ If you are a non-Argosy University student please show a photo identification at
   property :state,        String,  :default => 'GA'
   property :zip,          String,  :default => '30303'
   property :time,         String,  :default => '8am - 5pm'
-  property :price1,       String,  :default => '**Pricing:** '
+  property :price1,       String
   property :price2,       String
 
   has n, :reservations, :constraint => :destroy
