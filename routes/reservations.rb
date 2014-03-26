@@ -23,8 +23,22 @@ post '/admin/reservations/new' do
     :mobile      => params[:mobile],
     :workshop_id => params[:workshop]
   )
-  params[:argosy] ? reservation.update(:argosy => true) : reservation.update(:argosy => false)
   
+  params[:argosy] ? reservation.update(:argosy => true) : reservation.update(:argosy => false)
+
+
+
+
+  
+  unless params[:name].strip.split(',').count > 1
+    session[:flash] = 'You must enter your first and last name.'
+    redirect request.referrer
+  end
+
+
+
+
+    
   redirect '/reserved'
 end
 
