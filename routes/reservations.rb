@@ -30,10 +30,10 @@ post '/admin/reservations/new' do
 
 
   
-  unless params[:name].strip.split(',').count > 1
-    session[:flash] = 'You must enter your first and last name.'
-    redirect request.referrer
-  end
+  # unless params[:name].strip.split(',').count > 1
+#     session[:flash] = 'You must enter your first and last name.'
+#     redirect request.referrer
+#   end
 
 
 
