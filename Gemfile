@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.0"
+
 gem 'coffee-script', '>= 2.2.0'
 gem 'jsmin', '>= 1.0.1'
 gem 'sass', '>= 3.2.9'
@@ -19,7 +21,3 @@ gem 'dm-postgres-adapter', '~> 1.2.0', group: :production
 gem 'kramdown', '~> 1.2.0'
 gem 'pony', '~> 1.4'
 gem 'rake', '~> 10.1.0'
-
-
-
-
