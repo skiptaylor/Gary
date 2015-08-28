@@ -3,6 +3,12 @@ get '/?' do
   erb :'home'
 end
 
+get '/home/?' do
+  @workshop = Workshop.upcoming
+  erb :'home'
+end
+
+
 get '/gary/?' do
   erb :'gary'
 end
