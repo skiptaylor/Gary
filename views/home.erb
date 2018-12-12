@@ -1,7 +1,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mar-top">
+<<<<<<< HEAD
 			<img src="/img/main-group.png" width="400px" class="pull-right" />
+=======
+			<img src="/img/main-group.png" class="pull-right" />
+>>>>>>> origin/master
 			<p class="main-head">Here at the Gary Arthur Network you can<br />register for <span style="font-weight: 800; color: #bf0000;">NCE</span> and <span style="font-weight: 800; color: #bf0000;">NCMHCE</span> workshops<br />and purchase the study programs.</p>
 		</div>
 	</div>
@@ -47,7 +51,7 @@
 								<%= Kramdown::Document.new(w.price2).to_html %>
 								<p><%= Kramdown::Document.new(w.time).to_html %></p>
 								<p><strong><%= w.location %></strong><br />
-									<small><%= w.address1 %>, <%= w.city %>, <%= w.state %> <%= w.zip %></small></p>
+									<small><%= w.address1 %>&nbsp; <%= w.city %>&nbsp; <%= w.state %>&nbsp; <%= w.zip %></small></p>
 								</p>
 								<a href="/admin/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
 							</div>
@@ -78,7 +82,7 @@
 								<%= Kramdown::Document.new(w.price2).to_html %>
 								<p><%= Kramdown::Document.new(w.time).to_html %></p>
 								<p><strong><%= w.location %></strong><br />
-									<small><%= w.address1 %>, <%= w.city %>, <%= w.state %> <%= w.zip %></small></p>
+									<small><%= w.address1 %>&nbsp; <%= w.city %>&nbsp; <%= w.state %>&nbsp; <%= w.zip %></small></p>
 								</p>
 								<a href="/admin/reservations/new" class="btn btn-success btn-xs">Reserve a seat</a>
 							</div>
