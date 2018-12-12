@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
+ruby "2.5.1"
 
 gem 'coffee-script', '>= 2.2.0'
 gem 'jsmin', '>= 1.0.1'
