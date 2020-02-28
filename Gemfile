@@ -20,4 +20,4 @@ gem 'dm-postgres-adapter', '~> 1.2.0', group: :production
 
 gem 'kramdown', '~> 1.2.0'
 gem 'pony', '~> 1.4'
-gem 'rake', '~> 10.1.0'
+gem 'rake', '~> 12.3.3'
